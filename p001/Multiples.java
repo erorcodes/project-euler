@@ -1,5 +1,3 @@
-package p001;
-
 public class Multiples {
     private int answer = 0;
 

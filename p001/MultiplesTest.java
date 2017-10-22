@@ -1,5 +1,3 @@
-package p001;
-
 import org.junit.Before;
 import org.junit.Test;
 
