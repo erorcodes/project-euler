@@ -30,4 +30,10 @@ public class MultiplesTest {
         multiplier.addMultiples(10);
         assertEquals(23, multiplier.answer());
     }
+
+    @Test
+    public void testBelow1000() {
+        multiplier.addMultiples(1000);
+        assertEquals(0, multiplier.answer());
+    }
 }
