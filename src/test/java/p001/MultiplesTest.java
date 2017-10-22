@@ -34,6 +34,6 @@ public class MultiplesTest {
     @Test
     public void testBelow1000() {
         multiplier.addMultiples(1000);
-        assertEquals(0, multiplier.answer());
+        assertEquals(233168, multiplier.answer());
     }
 }
