@@ -8,13 +8,9 @@ public class Multiples {
     }
 
     public void addMultiples(int belowNumber) {
-        for (int i = 1; i < belowNumber; i++) {
+        for (int i = 0; i < belowNumber; i++) {
             if (i % 3 == 0 || i % 5 == 0) {
-                if (answer == 0) {
-                    answer = i;
-                } else {
                     answer += i;
-                }
             }
         }
     }
