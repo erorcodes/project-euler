@@ -1,45 +1,43 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class Fibonacci {
-    private int[] fibonacciNumbers;
+    private List<Integer> fibonacciNumbers;
 
-    public Fibonacci(int size) {
-        fibonacciNumbers = new int[size];
-        fibonacciNumbers[0] = 1;
-        fibonacciNumbers[1] = 2;
-        int firstNumber = 1;
-        int secondNumber = 2;
-        int newNumber;
-        for (int i = 2; i < size; i++) {
-            newNumber = firstNumber + secondNumber;
-            fibonacciNumbers[i] = newNumber;
-            firstNumber = secondNumber;
-            secondNumber = newNumber;
-        }
+    public Fibonacci() {
+        fibonacciNumbers = new ArrayList<>();
+        fibonacciNumbers.add(1);
+        fibonacciNumbers.add(2);
     }
 
-    public int[] getNumbers() {
+    List<Integer> getFibonacciNumbers() {
         return fibonacciNumbers;
     }
 
-    public String getNumbersAsString() {
-        return Arrays.toString(fibonacciNumbers);
+    void createBySize(int number) {
+        for (int i = 2; i < number; i++) {
+            int nextNumber = fibonacciNumbers.get(i-2) + fibonacciNumbers.get(i-1);
+            fibonacciNumbers.add(nextNumber);
+        }
     }
 
-    public int sumOfEven() {
+    void createByMax(int max) {
+        int i = 2;
+        while (true) {
+            int nextNumber = fibonacciNumbers.get(i-2) + fibonacciNumbers.get(i-1);
+            if (nextNumber < max) {
+                fibonacciNumbers.add(nextNumber);
+                i++;
+            } else return;
+        }
+    }
+
+    int sumOfEven() {
         int sum = 0;
-        for (int i = 0; i < fibonacciNumbers.length; i++) {
-            if (isEvenNumber(fibonacciNumbers[i])) {
-                sum += fibonacciNumbers[i];
+        for (int i = 0; i < fibonacciNumbers.size(); i++) {
+            if (fibonacciNumbers.get(i) % 2 == 0) {
+                sum += fibonacciNumbers.get(i);
             }
         }
         return sum;
-    }
-
-    private boolean isEvenNumber(int fibonacciNumber) {
-        if (fibonacciNumber % 2 == 0) {
-            return true;
-        }
-        else return false;
     }
 }
