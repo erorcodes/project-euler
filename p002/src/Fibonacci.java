@@ -25,4 +25,21 @@ public class Fibonacci {
     public String getNumbersAsString() {
         return Arrays.toString(fibonacciNumbers);
     }
+
+    public int sumOfEven() {
+        int sum = 0;
+        for (int i = 0; i < fibonacciNumbers.length; i++) {
+            if (isEvenNumber(fibonacciNumbers[i])) {
+                sum += fibonacciNumbers[i];
+            }
+        }
+        return sum;
+    }
+
+    private boolean isEvenNumber(int fibonacciNumber) {
+        if (fibonacciNumber % 2 == 0) {
+            return true;
+        }
+        else return false;
+    }
 }
